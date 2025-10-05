@@ -1,0 +1,308 @@
+:root {
+    --pad: 40px;
+}
+
+html {
+    line-height: 1;
+}
+
+
+/* fonts */
+@font-face {
+  font-family: "Neue Montreal Thin";
+  src: url(../fonts/PPNeueMontreal-Thin.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal Semi-Bold";
+  src: url(../fonts/PPNeueMontreal-SemiBold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal Book";
+  src: url(../fonts/PPNeueMontreal-Book.woff2) format("woff2");
+}
+
+/* main elements */
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f1f0f0;
+    font-family: "Neue Montreal Thin", Arial, sans-serif;
+    color: #101010;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+h1 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 0.5px solid #666;
+    border-bottom: 0.5px solid #666;
+}
+
+footer {
+    font-size: 11px;
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+    margin-bottom: 3em;
+    padding-bottom: 10px;
+    color: #c2c2c2
+}
+
+a, a:link, a:active {
+    /* color: #b4a7d6; */
+    color: #392d58;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #daaad8;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span.time {
+    color: #c2c2c2;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+/* portfolio framing */
+
+.frame {
+    position: fixed;
+    z-index: 10;
+    left: var(--pad);
+    right: var(--pad);
+    top: var(--pad);
+    bottom: var(--pad);
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+.left-side-frame {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 1px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.right-side-frame {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 1px;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.top-side-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.bottom-side-frame {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.fixed-header {
+    position: fixed;
+    z-index: 10;
+    left: calc(var(--pad) * 2);
+    top: calc(var(--pad) * 2);
+}
+
+/* content */
+div.content {
+    margin-top: 20px;
+    padding: 10px;
+    /* color: #FFF; */
+    color: #151515;
+    overflow-x: auto;
+    font-size: 12px;
+    border: none;
+}
+
+.post-header {
+    margin-top:25px;
+}
+
+/* left column */
+div.col-sm-3 {
+    /* margin-top: 25vh; */
+    font-size: 11px;
+    color: #666;
+}
+
+div.col-sm-3 div.profile-about {
+    margin-top: 10px;
+    /* color: #c2c2c2 */
+    color: #101010;
+    font-family: "Neue Montreal Book";
+}
+
+div.profile-wrapper{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+div.col-sm-3 img.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* pages */
+.PageNavigation {
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+    width: auto;
+    overflow: hidden;
+}
+
+.PageNavigation a {
+    display: inline-block;
+    text-align: center;
+    margin: 1em 0;
+    flex: 1;
+}
+
+.PageNavigation .next {
+    text-align: right;
+}
+
+.PageNavigation .prev {
+    text-align: left;
+}
+
+
+/* social media */
+.socials ul {
+    transition: all 0.5s ease;
+    list-style: none;
+    padding: 0;        
+    margin-top: 10px;         
+    display: flex;     
+    gap: 20px;         
+}
+
+.socials ul li a {
+    color: #b4a7d6;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.socials ul li a:hover {
+    color: #daaad8;
+}
+
+.socials ul.email-active {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.socials-container {
+    position: relative;
+    height: 24px;
+}
+
+/* email animation */
+.email-reveal {
+    position: absolute;
+    color: #b4a7d6;
+    font-size: 12px;
+    font-weight: 300;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 12px;
+    height: 100%;
+}
+
+.email-reveal.active {
+    pointer-events: all;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.copy-btn, .back-btn {
+    background-color: #212121;
+    border: none;
+    line-height: 14px;
+    border-radius: 15px;
+    font-size: .9em;
+    transition: all 0.3s ease;
+}
+
+ .copy-btn {
+    color: #b4a7d6;
+}
+
+.back-btn {
+    color: #666;
+}
+
+.copy-btn:hover {
+    color: #daaad8;
+}
+
+.copy-btn.copied {
+    color: #fff;
+}
+
+.back-btn:hover {
+    color: #999696;
+}
+
+
+
+@media (min-width: 1024px) {
+.fixed-condition {
+    position: fixed;
+    max-width: 255px;
+}
+}
+@media (max-width: 768px) {
+div.col-sm-3 {
+    margin-top: 30px;
+}
+}
